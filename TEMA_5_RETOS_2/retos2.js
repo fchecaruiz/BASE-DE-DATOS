@@ -73,9 +73,37 @@ async function main()
     // let [result] = await connection.query(sql);
     // console.log(result);
 //-------------------------------------------------------------------------------------------------------------------
+// reto 3. JOINS
+// let sql = "SELECT student.first_name,student.last_name, subjects.title FROM marks " +
+//           "JOIN student ON marks.student_id = student.student_id " +
+//           "JOIN subjects ON marks.subject_id = subjects.subject_id";
 
+// let [result] = await connection.query(sql);
+// console.log(result);
+//--------------------------------------------------------------------------------------------------------------------------
+// reto 4. JOINS
+// let sql = "SELECT teachers.first_name,teachers.last_name, subjects.title FROM subject_teacher " +
+//           "JOIN teachers ON subject_teacher.teacher_id = teachers.teacher_id " +
+//           "JOIN subjects ON subject_teacher.subject_id = subjects.subject_id";
 
-   
+// let [result] = await connection.query(sql);
+// console.log(result);
+//------------------------------------------------------------------------------------------------------------------------------------
+// reto . JOINS
+// let sql = "SELECT subjects.title AS nombre_asignatura, " +
+//           "teachers.first_name AS nombre_profesor, " +
+//           "teachers.last_name AS apellido_profesor, " +
+//           "COUNT(marks.student_id) AS TOTAL_ALUMNOS " +
+//           "FROM subjects " +
+//           "JOIN subject_teacher ON subjects.subject_id = subject_teacher.subject_id " +
+//           "JOIN teachers ON subject_teacher.teacher_id = teachers.teacher_id " +
+//           "JOIN marks ON subjects.subject_id = marks.subject_id " +
+//           "GROUP BY subjects.subject_id, subjects.title, teachers.first_name, teachers.last_name ";
+          
+
+// let [result] = await connection.query(sql);
+// console.log(result);
+
 
 
    }catch(error)
